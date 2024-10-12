@@ -1,0 +1,34 @@
+header {
+  height: 10vh;
+}
+.main_page {
+  height: 80vh;
+}
+footer {
+  height: 10vh;
+}
+/* fonts */
+.font_1 {
+  font-size: 15px;
+}
+.font_2 {
+  font-size: 13px;
+}
+/* colors */
+.color_1 {
+  color: #2c3e50;
+}
+.color_2 {
+  color: #5d6d7e;
+}
+.color_3 {
+  color: #f2f4f4;
+}
+
+.warning_logo {
+  font-size: 200px;
+}
+/* background colors */
+.bg_1 {
+  background-color: #2e86c1;
+}
