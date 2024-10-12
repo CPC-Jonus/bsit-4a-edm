@@ -4,29 +4,18 @@ class database
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
-    private $dbname = "edma";
-    private $con = null;
-    private $status = false;
+    private $dbname = "edm";
 
-    function __construct()
-    {
-        $this->con = $this->initDatabase();
-    }
-    // establish connection
-    public function getCon(){
-        return $this->con;
-    }
-    // check database status
-    public function getStatus(){
-        return $this->status;
-    }
-    // initialize database connection
-    private function initDatabase(){
+    public function initDatabase(){
         try {
-            echo "success";
-            $this->status = true;
-            return $this->con = null;
+            $con = new PDO("mysql:host=$this->host;dbname=".$this->dbname, 
+            $this->user, 
+            $this->pass);
+            // set the PDO error mode to exception
+            $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $con;
         } catch (PDOException $th) {
+            echo $th;
             return null;
         }
     }
